@@ -10,6 +10,18 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* Below is the style code that we wrote ourselves */
+
+.header-box {
+  border-radius: 0 0 100% 100% / 0 0 20% 20%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -1rem;
+}
+
+/* Below is the style code that came with the template */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
