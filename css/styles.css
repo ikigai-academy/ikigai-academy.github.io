@@ -64,16 +64,27 @@ padding: 6px 12px;
   -webkit-animation: fadeEffect 1s;
   animation: fadeEffect 1s;
   align-items: center; 
-  justify-content: center;
+  justify-content: space-between;
 }
 .tabcontent-image{
-  float: left
+  position: relative;
+  float: left;
+  opacity: 1;
+}
+.tabcontent-gradient {
+  height: auto;
+  width: auto;
+  background-image: linear-gradient(to right, rgba(1,32,79,.6), transparent);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .tabcontent-text{
   font-size: 14px;
   padding-left: 325px;
   flex-direction: column;
-  justify-content: center;
+
 }
 
 /* Fade in tabs */
