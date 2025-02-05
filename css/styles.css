@@ -60,7 +60,7 @@
 /* Style the tab content */
 .tabcontent {
   display: flex;
-padding: 6px 12px;
+  padding: 10px 50px;
   -webkit-animation: fadeEffect 1s;
   animation: fadeEffect 1s;
   align-items: center; 
@@ -81,7 +81,7 @@ padding: 6px 12px;
   left: 0;
 }
 .tabcontent-text{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding-left: 325px;
   flex-direction: column;
 
@@ -168,10 +168,10 @@ padding: 6px 12px;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
   /* Start of Custom Colours */
-  --bs-dorado: #645d5a;
+  --bs-dorado: #1a1412;
   --bs-lilac: #e6a3d0;
   --bs-glacier: #85d1e4;
-  --bs-dorado-rgb: 100, 93, 90;
+  --bs-dorado-rgb: 100, 93, 90; /* change */
   --bs-lilac-rgb: 230, 163, 208;
   --bs-glacier-rgb: 133, 209, 228;
 }
