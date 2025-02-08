@@ -183,10 +183,10 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
   /* Start of Custom Colours */
-  --bs-dorado: #1a1412;
+  --bs-dorado: #645d5a;
   --bs-lilac: #e6a3d0;
   --bs-glacier: #85d1e4;
-  --bs-dorado-rgb: 26, 20, 18;
+  --bs-dorado-rgb: 100, 93, 90;
   --bs-lilac-rgb: 230, 163, 208;
   --bs-glacier-rgb: 133, 209, 228;
 }
