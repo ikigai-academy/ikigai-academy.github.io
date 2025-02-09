@@ -10,6 +10,182 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* Below is the style code that we wrote ourselves */
+
+.header-box {
+  border-radius: 0 0 100% 100% / 0 0 20% 20%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -1rem;
+}
+
+
+.kerning{
+  letter-spacing: 2rem;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: var(--bs-gray-200);
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 24%;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: var(--bs-gray-400);
+  color: white;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgba(var(--bs-glacier-rgb));
+  color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: flex;
+  padding: 10px 50px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+  align-items: center; 
+  justify-content: space-between;
+}
+.tabcontent-image{
+  position: relative;
+  float: left;
+  opacity: 1;
+}
+.tabcontent-gradient {
+  height: auto;
+  width: auto;
+  background-image: linear-gradient(to right, rgba(1,32,79,.6), transparent);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tabcontent-text{
+  font-size: 1.25rem;
+  padding-left: 325px;
+  flex-direction: column;
+
+}
+/*Block Quotes*/
+.blockquote {
+  position: relative;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 5px solid #51c0db;
+  background: #f9f9f9;
+  font-style: italic;
+  color: #555;
+}
+.blockquote-footer {
+  text-align: right;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Code for the interactive kanji */
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+*, *:before, *:after{
+  box-sizing:border-box;
+}
+body{
+  font-family: 'Lato', sans-serif;
+}
+div.interactive-letters{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.letter{
+  display: inline-block;
+  font-weight: 900;
+  font-size: 6em;
+  margin: 0.2em;
+  position: relative;
+  color: #e6a3d0;
+  transform-style: preserve-3d;
+  perspective: 400;
+  z-index: 1;
+}
+.letter:before, .letter:after{
+  position:absolute;
+  content: attr(data-letter);
+  transform-origin: top left;
+  top:0;
+  left:0;
+}
+.letter, .letter:before, .letter:after{
+  transition: all 0.3s ease-in-out;
+}
+.letter:before{
+  color: #000000;
+  text-shadow: 
+    -1px 0px 1px rgba(255,255,255,.8),
+    1px 0px 1px rgba(0,0,0,.8);
+  z-index: 3;
+  transform:
+    rotateX(0deg)
+    rotateY(-15deg)
+    rotateZ(0deg);
+}
+.letter:after{
+  color: rgba(0,0,0,.11);
+  z-index:2;
+  transform:
+    scale(1.08,1)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    skew(0deg,1deg);
+}
+.letter:hover:before{
+  color: #fafafa;
+  transform:
+    rotateX(0deg)
+    rotateY(-40deg)
+    rotateZ(0deg);
+}
+.letter:hover:after{
+  transform:
+    scale(1.08,1)
+    rotateX(0deg)
+    rotateY(40deg)
+    rotateZ(0deg)
+    skew(0deg,22deg);
+}
+
+/* Below is the style code that came with the template */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -77,6 +253,13 @@
   --bs-link-hover-color: #0a58ca;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
+  /* Start of Custom Colours */
+  --bs-dorado: #645d5a;
+  --bs-lilac: #e6a3d0;
+  --bs-glacier: #85d1e4;
+  --bs-dorado-rgb: 100, 93, 90;
+  --bs-lilac-rgb: 230, 163, 208;
+  --bs-glacier-rgb: 133, 209, 228;
 }
 
 *,
@@ -2845,19 +3028,19 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #0d6efd;
-  --bs-btn-border-color: #0d6efd;
+  --bs-btn-bg: #85d1e4;
+  --bs-btn-border-color: #85d1e4;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0b5ed7;
-  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-hover-bg: #6ccee7;
+  --bs-btn-hover-border-color: #6ccee7;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0a58ca;
-  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-bg: #6ccee7;
+  --bs-btn-active-border-color: #6ccee7;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #0d6efd;
-  --bs-btn-disabled-border-color: #0d6efd;
+  --bs-btn-disabled-bg: #85d1e4;
+  --bs-btn-disabled-border-color: #85d1e4;
 }
 
 .btn-secondary {
@@ -2980,19 +3163,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #0d6efd;
-  --bs-btn-border-color: #0d6efd;
+  --bs-btn-color: #85d1e4;
+  --bs-btn-border-color: #85d1e4;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0d6efd;
-  --bs-btn-hover-border-color: #0d6efd;
+  --bs-btn-hover-bg: #31d2f2;
+  --bs-btn-hover-border-color: #31d2f2;
   --bs-btn-focus-shadow-rgb: 13, 110, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0d6efd;
-  --bs-btn-active-border-color: #0d6efd;
+  --bs-btn-active-bg: #31d2f2;
+  --bs-btn-active-border-color: #31d2f2;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #0d6efd;
+  --bs-btn-disabled-color: #85d1e4;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #0d6efd;
+  --bs-btn-disabled-border-color: #85d1e4;
   --bs-gradient: none;
 }
 
@@ -3085,12 +3268,12 @@ textarea.form-control-lg {
   --bs-btn-color: #f8f9fa;
   --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #f8f9fa;
-  --bs-btn-hover-border-color: #f8f9fa;
+  --bs-btn-hover-bg: #e6a3d0;
+  --bs-btn-hover-border-color: #e6a3d0;
   --bs-btn-focus-shadow-rgb: 248, 249, 250;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #f8f9fa;
-  --bs-btn-active-border-color: #f8f9fa;
+  --bs-btn-active-bg: #e6a3d0;
+  --bs-btn-active-border-color: #e6a3d0;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #f8f9fa;
   --bs-btn-disabled-bg: transparent;
@@ -4145,6 +4328,17 @@ textarea.form-control-lg {
   --bs-navbar-brand-color: #fff;
   --bs-navbar-brand-hover-color: #fff;
   --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-dorado {
+  --bs-navbar-color: rgba(100, 93, 90, 0.55);
+  --bs-navbar-hover-color: rgba(100, 93, 90, 0.75);
+  --bs-navbar-disabled-color: rgba(100, 93, 90, 0.25);
+  --bs-navbar-active-color: #fff;
+  --bs-navbar-brand-color: #fff;
+  --bs-navbar-brand-hover-color: #fff;
+  --bs-navbar-toggler-border-color: rgba(100, 93, 90, 0.1);
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
@@ -6694,6 +6888,11 @@ textarea.form-control-lg {
   background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1)) !important;
 }
 
+.text-bg-dorado {
+  color: #fff !important;
+  background-color: RGBA(100, 93, 90, var(--bs-bg-opacity, 1)) !important;
+}
+
 .link-primary {
   color: #0d6efd !important;
 }
@@ -8095,9 +8294,15 @@ textarea.form-control-lg {
 
 .text-black-50 {
   --bs-text-opacity: 1;
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: rgba(0, 0, 0, 1) !important;
 }
 
+.text-white-blackoutline-50 {
+  --bs-text-opacity: 1;
+  color: rgba(255, 255, 255, 1) !important;
+  -webkit-text-stroke-width: 0.05px;
+  -webkit-text-stroke-color: #000;
+}
 .text-white-50 {
   --bs-text-opacity: 1;
   color: rgba(255, 255, 255, 0.5) !important;
@@ -8161,7 +8366,14 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-dorado-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-sakurai {
+  --bs-bg-opacity: 1;
+  background-image: url("../assets/sakura\ tree.jpg") !important;
+  background-repeat: no-repeat;
+  
 }
 
 .bg-black {
